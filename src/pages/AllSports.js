@@ -5,7 +5,6 @@ function AllSports() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [allSports, setAllSports] = useState([]);
   
- 
 
   useEffect(() => {
     fetch(`https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_API_KEY}/all_sports.php`)
