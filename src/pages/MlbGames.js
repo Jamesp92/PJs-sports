@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-
-function MlbHighlights() {
+function MlbGames() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mlbHighlights, setMlbHighlights] = useState([]);
-
+  const [mlbGames, setMlbSports] = useState([]);
+  
 
   
   useEffect(() => {
-    fetch(`https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_API_KEY}/eventshighlights.php?l=MLB`)
+    fetch(`http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1`)
   
     .then(response => {
       if (!response.ok) {
@@ -20,11 +19,11 @@ function MlbHighlights() {
     })
 
   .then((jsonifiedResponse) => {
-      setMlbHighlights(jsonifiedResponse.tvhighlights)
+      setMlbSports(jsonifiedResponse.games)
       setIsLoaded(true)
-      console.log(jsonifiedResponse.tvhighlights)
+      console.log(jsonifiedResponse.games)
     })
-
+    
   .catch((error) => {
     setError(error.message)
     setIsLoaded(true)
@@ -38,20 +37,21 @@ if (error) {
 } else {
   return (
     <>
-      <h1>MLB Highlights </h1>
+      <h1>ALL SPORTS</h1>
       <ul>
-        {mlbHighlights.map((highlight, index) =>
+        {mlbGames.map((sport, index) =>
           <li key={index}>
-            <h3> {highlight.strEvent} | {highlight.dateEvent} </h3>
-            {/* <img src={`${highlight.strThumb}`}/> */}
-            <iframe src={`${highlight.strVideo.replace('watch?v=','embed/')}`}></iframe>
-            {/* <img width = "200" height ="200" src={`${highlight.strFanart}`}></img> */}
+            <h3> {sport.games}</h3>
+            <img src={`${sport.strSportThumb}`}/> 
+            <p>{sport.strSportDescription}</p>
           </li>
         )}
       </ul>
     </>
   );
 }
-}
-export default  MlbHighlights;
 
+
+}
+
+export default MlbGames;
