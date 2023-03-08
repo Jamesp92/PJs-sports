@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bulma/css/bulma.min.css';
+import {MdSportsBaseball , MdSportsBasketball, MdOutlineSportsHockey ,MdOutlineSportsRugby} from "react-icons/md"
 
 function NavBar() {
   return (
@@ -8,7 +9,11 @@ function NavBar() {
             <nav class="navbar" role="navigation" aria-label="main navigation">
               <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
-                  <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
+                <MdSportsBaseball/> 
+                <MdOutlineSportsRugby/>
+                <p>PJ's Sports</p>
+                <MdSportsBasketball/>
+                <MdOutlineSportsHockey/>
                 </a>
             
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
