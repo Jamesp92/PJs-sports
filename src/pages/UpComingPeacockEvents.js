@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import {
+  Link,
+} from "react-router-dom";
 
 function UpComingPeacockEvents() {
   const [error, setError] = useState(null);
@@ -46,6 +49,7 @@ if (error) {
             <h3> {event.strEvent}</h3>
             <p>{event.dateEvent}</p>
             <p>Event Streaming on : {event.strChannel} at : {event.strTime}</p>
+            <Link to="/">Home</Link>
             
             {/* <img src={`${sport.strSportThumb}`}/> 
             <p>{sport.strSportDescription}</p> */}

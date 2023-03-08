@@ -3,15 +3,14 @@ import React from 'react';
 // import AllSports from '../pages/AllSports';
 // import MlbGames from '../pages/MlbGames'
 // import MlbHighlights from '../pages/MlbHighlights'
-import UpComingTvEvents from '../pages/UpComingPeacockEvents';
+// import UpComingTvEvents from '../pages/UpComingPeacockEvents';
+import 'bulma/css/bulma.min.css';
+import NavBar from './NavBar';
 
 function App() {
   return (
     <React.Fragment>
-      {/* <MlbGames /> */}
-      {/* < AllSports /> */}
-      {/* < MlbHighlights /> */}
-      < UpComingTvEvents />
+      <NavBar />
     </React.Fragment>
   );
 }
