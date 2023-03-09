@@ -19,9 +19,9 @@ function MlbGames() {
     })
 
   .then((jsonifiedResponse) => {
-      setMlbSports(jsonifiedResponse.games)
+      setMlbSports(jsonifiedResponse.dates)
       setIsLoaded(true)
-      console.log(jsonifiedResponse.games)
+      console.log(jsonifiedResponse.dates)
     })
     
   .catch((error) => {
@@ -29,6 +29,7 @@ function MlbGames() {
     setIsLoaded(true)
   });
 }, [])
+
 
 if (error) {
   return <h1>Error: {error}</h1>;

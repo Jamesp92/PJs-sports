@@ -1,18 +1,23 @@
-import React from 'react';
-// import './App.css';
-// import AllSports from '../pages/AllSports';
-// import MlbGames from '../pages/MlbGames'
-// import MlbHighlights from '../pages/MlbHighlights'
-// import UpComingTvEvents from '../pages/UpComingPeacockEvents';
-import 'bulma/css/bulma.min.css';
-import NavBar from './NavBar';
+import Navbar from "./NavBar"
+import MlbHighlights from "../pages/MlbHighlights"
+import UpComingPeacockEvents from "../pages/UpComingPeacockEvents"
+import AllSports from "../pages/AllSports"
+import Home from "../pages/Home"
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <React.Fragment>
-      <NavBar />
-    </React.Fragment>
-  );
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/allsports" element={<AllSports />} />
+          <Route path="/peacock" element={<UpComingPeacockEvents />} />
+        </Routes>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
