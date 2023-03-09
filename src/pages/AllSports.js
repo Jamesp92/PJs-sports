@@ -39,7 +39,7 @@ if (error) {
   return (
     <>
       <h1>ALL SPORTS</h1>
-      <ul>
+      <ol>
         {allSports.map((sport, index) =>
           <li key={index}>
             <h3> {sport.strSport}</h3>
@@ -47,7 +47,7 @@ if (error) {
             <p>{sport.strSportDescription}</p>
           </li>
         )}
-      </ul>
+      </ol>
     </>
   );
 }

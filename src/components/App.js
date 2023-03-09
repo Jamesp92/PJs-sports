@@ -4,6 +4,8 @@ import UpComingPeacockEvents from "../pages/UpComingPeacockEvents"
 import AllSports from "../pages/AllSports"
 import Home from "../pages/Home"
 import { Route, Routes } from "react-router-dom"
+import MlbGames from "../pages/MlbGames"
+import MlbTeams from "../pages/MlbTeams"
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/allsports" element={<AllSports />} />
           <Route path="/peacock" element={<UpComingPeacockEvents />} />
+          <Route path="/MlbHighlights" element={<MlbHighlights />} />
+          <Route path="/Mlbgames" element={<MlbGames />} />
+          <Route path="/Mlbteams" element={<MlbTeams />} />
         </Routes>
       </div>
     </>
