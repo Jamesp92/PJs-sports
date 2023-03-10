@@ -14,6 +14,7 @@ function Navbar() {
         <CustomLink to="/Mlbgames">MLB games</CustomLink>
         <CustomLink to="/Mlbteams">MLB Teams</CustomLink>
         <CustomLink to="/HockeyScores">Hockey</CustomLink>
+        <CustomLink to="/BasketBallScores">BasketBall</CustomLink>
       </ul>
     </nav>
   )
