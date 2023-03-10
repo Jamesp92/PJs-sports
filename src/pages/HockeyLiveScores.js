@@ -52,7 +52,7 @@ if (error) {
               <h3><strong> {hockey.strAwayTeam} </strong> VS <strong>{hockey.strHomeTeam}</strong> </h3>
               <h3><ul>{hockey.intAwayScore} | {hockey.intHomeScore}</ul></h3>
               <h3>League: {hockey.strLeague}</h3>
-              </div>
+            </div>
           </li>
         )}
       </ul>

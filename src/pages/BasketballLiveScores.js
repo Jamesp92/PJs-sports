@@ -53,13 +53,13 @@ if (error) {
   return (
     <>
       
-        {basketballScores.map((basketball,) =>
+        {basketballScores.map((basketball) =>
       <div>
         <div className='box'>
-          <h3> <img src={`${basketball.strAwayTeamBadge}`}  width="75" height="75"/>  {basketball.strAwayTeam} vs {basketball.strHomeTeam} <img src={`${basketball.strHomeTeamBadge}`} width="74" height="74"/> 
-            </h3>
-            <br></br>
-            <br></br>
+          <img src={`${basketball.strAwayTeamBadge}`}  width="100" height="100"/> 
+          <img src={`${basketball.strHomeTeamBadge}`} width="74" height="74"/> 
+          <h3><strong> {basketball.strAwayTeam} </strong> VS <strong>{basketball.strHomeTeam}</strong> </h3>
+
           <h3> {basketball.intAwayScore} | {basketball.intHomeScore}</h3>
           <h3> League: {basketball.strLeague}</h3>
           </div>
