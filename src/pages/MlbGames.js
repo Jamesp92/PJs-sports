@@ -47,14 +47,14 @@ if (error) {
 } else {
   return (
     <>
-      <h1>MLB Games today</h1>
+ 
       <ul>
         {mlbGames.map((game, index) =>
           <li key={index}>
-            <h3>{game.teams.home.team.name} VS {game.teams.away.team.name}  </h3>
-            <h3>Score: {game.teams.home.score}  | {game.teams.away.score}  </h3>
-            {/* <img src={`${sport.strSportThumb}`}/> 
-            <p>{sport.strSportDescription}</p> */}
+            <div className='box'>
+              <h3>{game.teams.home.team.name} VS {game.teams.away.team.name} </h3>
+              <h3>Score: {game.teams.home.score}  | {game.teams.away.score} </h3>
+            </div>
           </li>
         )}
       </ul>

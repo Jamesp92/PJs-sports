@@ -39,15 +39,17 @@ if (error) {
   return (
     <>
       <h1>ALL SPORTS</h1>
-      <ol>
-        {allSports.map((sport, index) =>
-          <li key={index}>
-            <h3> {sport.strSport}</h3>
-            <img src={`${sport.strSportThumb}`}/> 
-            <p>{sport.strSportDescription}</p>
-          </li>
+      <ul>
+          {allSports.map((sport, index) =>
+            <li key={index}>
+              <div className='box'>
+                <h3> {sport.strSport}</h3>
+                <img src={`${sport.strSportThumb}`}/> 
+                <p>{sport.strSportDescription}</p>
+                </div>
+            </li>
         )}
-      </ol>
+      </ul>
     </>
   );
 }

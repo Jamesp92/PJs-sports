@@ -6,13 +6,12 @@ function Navbar() {
     <nav className="nav">
       <Link to="/" className="site-title">
       <MdOutlineSportsFootball /> <MdSportsBaseball/>PJ's Sports<MdOutlineSportsSoccer />
-      </Link>
+      </Link>  
       <ul>
         <CustomLink to="/peacock">Peacock Sports</CustomLink>
         <CustomLink to="/allsports">Sports Details</CustomLink>
         <CustomLink to="/Mlbhighlights">MLB Highlights</CustomLink>
         <CustomLink to="/Mlbgames">MLB games</CustomLink>
-        <CustomLink to="/Mlbteams">MLB Teams</CustomLink>
         <CustomLink to="/HockeyScores">Hockey</CustomLink>
         <CustomLink to="/BasketBallScores">BasketBall</CustomLink>
       </ul>

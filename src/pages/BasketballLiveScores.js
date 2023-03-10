@@ -37,6 +37,11 @@ function BasketBallLiveScores() {
 
 console.log(basketballScores)
 
+let newArray = basketballScores.map( arrayItem => {
+  return 
+
+})
+  
 
 
 
@@ -47,28 +52,20 @@ if (error) {
 } else {
   return (
     <>
-      <h1>Live Scores from basketball around the world </h1>
-      <h2>Scores will update every 2 minutes</h2>
-      <ul>
-        {basketballScores.map((basketball, index) =>
-          <li key={index}>
-        
-            <h3>
-            <img src={`${basketball.strAwayTeamBadge}`}  width="75" height="75"/>  {basketball.strAwayTeam} vs {basketball.strHomeTeam} <img src={`${basketball.strHomeTeamBadge}`} width="74" height="74"/> 
+      
+        {basketballScores.map((basketball,) =>
+      <div>
+        <div className='box'>
+          <h3> <img src={`${basketball.strAwayTeamBadge}`}  width="75" height="75"/>  {basketball.strAwayTeam} vs {basketball.strHomeTeam} <img src={`${basketball.strHomeTeamBadge}`} width="74" height="74"/> 
             </h3>
-            <h3>
-            {basketball.intAwayScore} | {basketball.intHomeScore}
-            </h3>
-            League: {basketball.strLeague}
-           
-          
-          
-            {/* <img src={`${highlight.strThumb}`}/> */}
-            {/* <iframe src={`${highlight.strVideo.replace('watch?v=','embed/')}`}></iframe> */}
-            {/* <img width = "200" height ="200" src={`${highlight.strFanart}`}></img> */}
-          </li>
+            <br></br>
+            <br></br>
+          <h3> {basketball.intAwayScore} | {basketball.intHomeScore}</h3>
+          <h3> League: {basketball.strLeague}</h3>
+          </div>
+        </div>
         )}
-      </ul>
+      
     </>
   );
 }
