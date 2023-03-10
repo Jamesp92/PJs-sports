@@ -6,6 +6,7 @@ import Home from "../pages/Home"
 import { Route, Routes } from "react-router-dom"
 import MlbGames from "../pages/MlbGames"
 import MlbTeams from "../pages/MlbTeams"
+import HockeyLiveScores from "../pages/HockeyLiveScores"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/MlbHighlights" element={<MlbHighlights />} />
           <Route path="/Mlbgames" element={<MlbGames />} />
           <Route path="/Mlbteams" element={<MlbTeams />} />
+          <Route path="/HockeyScores" element={<HockeyLiveScores />} />
         </Routes>
       </div>
     </>

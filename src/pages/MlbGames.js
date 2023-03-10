@@ -52,7 +52,7 @@ if (error) {
         {mlbGames.map((game, index) =>
           <li key={index}>
             <h3>{game.teams.home.team.name} VS {game.teams.away.team.name}  </h3>
-            <h3>Score: {game.teams.home.score} | {game.teams.away.score}  </h3>
+            <h3>Score: {game.teams.home.score}  | {game.teams.away.score}  </h3>
             {/* <img src={`${sport.strSportThumb}`}/> 
             <p>{sport.strSportDescription}</p> */}
           </li>

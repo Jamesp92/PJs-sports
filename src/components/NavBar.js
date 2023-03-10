@@ -1,11 +1,11 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import { MdSportsFootball,MdSportsBaseball } from "react-icons/md"
+import { MdOutlineSportsFootball,MdSportsBaseball, MdOutlineSportsSoccer } from "react-icons/md"
 
 function Navbar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-      <MdSportsFootball /> <MdSportsBaseball/>PJ's Sports
+      <MdOutlineSportsFootball /> <MdSportsBaseball/>PJ's Sports<MdOutlineSportsSoccer />
       </Link>
       <ul>
         <CustomLink to="/peacock">Peacock Sports</CustomLink>
@@ -13,10 +13,11 @@ function Navbar() {
         <CustomLink to="/Mlbhighlights">MLB Highlights</CustomLink>
         <CustomLink to="/Mlbgames">MLB games</CustomLink>
         <CustomLink to="/Mlbteams">MLB Teams</CustomLink>
+        <CustomLink to="/HockeyScores">Hockey</CustomLink>
       </ul>
     </nav>
   )
-}
+} 
 
 function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
 
-
-function MlbTeams() {
+function HockeyLiveScores() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mlbTeams, setMlbTeams] = useState([]);
+  const [hockeyScores, setHockeyScores] = useState([]);
 
 
   
   useEffect(() => {
-    fetch(`http://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams`)
+    fetch(`https://www.thesportsdb.com/api/v2/json/${process.env.REACT_APP_API_KEY}/livescore.php?s=Ice_Hockey`)
   
     .then(response => {
       if (!response.ok) {
@@ -21,12 +20,12 @@ function MlbTeams() {
     })
 
   .then((jsonifiedResponse) => {
-      setMlbTeams(jsonifiedResponse.sports)
+      setHockeyScores(jsonifiedResponse.events)
       setIsLoaded(true)
-      const teams = jsonifiedResponse.sports
+      const teams = jsonifiedResponse.events
 
       teams.forEach(team => {
-        // console.log(team.leagues[0].teams)
+        console.log(team)
         
       });
       // console.log(jsonifiedResponse.sports[0])
@@ -42,10 +41,12 @@ function MlbTeams() {
 
 
 
-mlbTeams.forEach(team => {
-  console.log(team.leagues[0].teams[0].logos)
+hockeyScores.forEach(team => {
+  console.log(team)
   
 });
+
+
 
 
 if (error) {
@@ -55,14 +56,25 @@ if (error) {
 } else {
   return (
     <>
-      <h1>MLB Teams </h1>
+      <h1>Live Scores from Hockey around the world </h1>
       <ul>
-        {mlbTeams.map((team, index) =>
+        {hockeyScores.map((hockey, index) =>
           <li key={index}>
-            <h3> {team.leagues[0].teams[0].team.displayName} </h3>
-            <h3> {team.leagues[0].teams[24].team.displayName} </h3>
-            <h3> {team.leagues[0].teams[1].team.displayName} </h3>
-            <h3> {team.leagues[0].teams[2].team.displayName} </h3>
+        
+            <h3>
+            <img src={`${hockey.strAwayTeamBadge}`}  width="100" height="100"/>  {hockey.strAwayTeam} vs {hockey.strHomeTeam} <img src={`${hockey.strHomeTeamBadge}`} width="100" height="100"/> 
+            </h3>
+            <h3>
+            {hockey.intAwayScore} | {hockey.intHomeScore}
+            </h3>
+            League: {hockey.strLeague}
+            <h3>
+            </h3>
+            <h3>
+    
+            </h3>
+          
+          
             {/* <img src={`${highlight.strThumb}`}/> */}
             {/* <iframe src={`${highlight.strVideo.replace('watch?v=','embed/')}`}></iframe> */}
             {/* <img width = "200" height ="200" src={`${highlight.strFanart}`}></img> */}
@@ -73,4 +85,4 @@ if (error) {
   );
 }
 }
-export default  MlbTeams;
+export default  HockeyLiveScores;

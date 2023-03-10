@@ -48,9 +48,8 @@ if (error) {
           <li key={index}>
             <h3> {event.strEvent}</h3>
             <p>{event.dateEvent}</p>
-            <p>Event Streaming on : {event.strChannel} at : {event.strTime}</p>
-            <Link to="/">Home</Link>
-            
+            <p>Event Streaming on : {event.strChannel} </p>
+            <p>at : {event.strTime}</p>
             {/* <img src={`${sport.strSportThumb}`}/> 
             <p>{sport.strSportDescription}</p> */}
           </li>
