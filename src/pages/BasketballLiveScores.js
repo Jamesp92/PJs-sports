@@ -57,7 +57,7 @@ if (error) {
       <div>
         <div className='box'>
           <img src={`${basketball.strAwayTeamBadge}`}  width="100" height="100"/> 
-          <img src={`${basketball.strHomeTeamBadge}`} width="74" height="74"/> 
+          <img src={`${basketball.strHomeTeamBadge}`} width="100" height="100"/> 
           <h3><strong> {basketball.strAwayTeam} </strong> VS <strong>{basketball.strHomeTeam}</strong> </h3>
 
           <h3> {basketball.intAwayScore} | {basketball.intHomeScore}</h3>

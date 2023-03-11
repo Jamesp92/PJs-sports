@@ -43,18 +43,15 @@ if (error) {
   return (
     <>
       <h1>Up Coming Sporting Events on Peacock </h1>
-      <ul>
-        {upComingPeacockEvents.map((event, index) =>
-          <li key={index}>
+        {upComingPeacockEvents.map((event) =>
+      <div className='box'>
             <h3> {event.strEvent}</h3>
             <p>{event.dateEvent}</p>
             <p>Event Streaming on : {event.strChannel} </p>
             <p>at : {event.strTime}</p>
-            {/* <img src={`${sport.strSportThumb}`}/> 
-            <p>{sport.strSportDescription}</p> */}
-          </li>
+      </div>
         )}
-      </ul>
+  
     </>
   );
 }

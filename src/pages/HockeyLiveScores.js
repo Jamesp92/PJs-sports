@@ -42,7 +42,6 @@ if (error) {
 } else {
   return (
     <>
-      <h1>Live Scores from Hockey around the world </h1>
       <ul>
         {hockeyScores.map((hockey, index) =>
           <li key={index}>
