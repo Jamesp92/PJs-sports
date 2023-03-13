@@ -1,35 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import useFetch from '../components/useFetch'
 
 function AllSports() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [allSports, setAllSports] = useState([]);
-  
 
-  useEffect(() => {
-    fetch(`https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_API_KEY}/all_sports.php`)
-  
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status}: ${response.statusText}`);
-      } else {
-        return response.json()
-      }
-    })
+  const {error , isLoaded, data} = useFetch(`https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_API_KEY}/all_sports.php`)
 
-  .then((jsonifiedResponse) => {
-      setAllSports(jsonifiedResponse.sports)
-      setIsLoaded(true)
-      
-    })
-    
-
-
-  .catch((error) => {
-    setError(error.message)
-    setIsLoaded(true)
-  });
-}, [])
+  let newData = data.sports
 
 if (error) {
   return <h1>Error: {error}</h1>;
@@ -38,18 +13,20 @@ if (error) {
 } else {
   return (
     <>
+    <div class="text">
       <h1>ALL SPORTS</h1>
-      <ul>
-          {allSports.map((sport, index) =>
-            <li key={index}>
+    </div>  
+
+          {newData.map((sport) =>
               <div className='box'>
                 <h3> {sport.strSport}</h3>
                 <img src={`${sport.strSportThumb}`}/> 
-                <p>{sport.strSportDescription}</p>
+                <h2>{sport.strSportDescription}</h2>
                 </div>
-            </li>
+
+          
         )}
-      </ul>
+    
     </>
   );
 }

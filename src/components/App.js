@@ -1,5 +1,5 @@
 import Navbar from "./NavBar"
-import UpComingPeacockEvents from "../pages/UpComingPeacockEvents"
+import UpComingPeacockEvents from "./UpComingPeacockEvents"
 import AllSports from "../pages/AllSports"
 import Home from "../pages/Home"
 import { Route, Routes } from "react-router-dom"
@@ -8,6 +8,7 @@ import HockeyLiveScores from "../pages/HockeyLiveScores"
 import BasketBallLiveScores from "../pages/BasketballLiveScores"
 import LatestHighlights from "../pages/LatestHighLights"
 import MlbHighlights from "../pages/MlbHighlights"
+import Events from "../pages/Events"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/BasketBallScores" element={<BasketBallLiveScores />} />
           <Route path="/latestHighlights" element={<LatestHighlights/>} />
           <Route path="/MlbHighLights" element={<MlbHighlights />} />
+          <Route path="/upcoming_events" element={<Events />} />
         </Routes>
       </div>
     </>

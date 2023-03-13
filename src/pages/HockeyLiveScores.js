@@ -1,40 +1,9 @@
-import React, { useState, useEffect } from 'react'
-
+import useFetch from '../components/useFetch'
 
 function HockeyLiveScores() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hockeyScores, setHockeyScores] = useState([]);
+  const {error , isLoaded, data: basketballScores} = useFetch(`https://www.thesportsdb.com/api/v2/json/${process.env.REACT_APP_API_KEY}/livescore.php?s=Ice_Hockey`)
 
-const data = [];
-  
-  useEffect(() => {
-    fetch(`https://www.thesportsdb.com/api/v2/json/${process.env.REACT_APP_API_KEY}/livescore.php?s=Ice_Hockey`)
-  
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status}: ${response.statusText}`);
-      } else {
-        return response.json()
-      }
-    })
-
-  .then((jsonifiedResponse) => {
-      setHockeyScores(jsonifiedResponse.events)
-      setIsLoaded(true)
-    })
-
-  .catch((error) => {
-    setError(error.message)
-    setIsLoaded(true)
-  });
-}, [])
-
-
-
-
-
-
+  let newData = basketballScores.events
 if (error) {
   return <h1>Error: {error}</h1>;
 } else if (!isLoaded) {
@@ -43,7 +12,7 @@ if (error) {
   return (
     <>
       <ul>
-        {hockeyScores.map((hockey, index) =>
+        {newData.map((hockey, index) =>
           <li key={index}>
             <div className='box'  >
               <img src={`${hockey.strAwayTeamBadge}`}  width="100" height="100"/>

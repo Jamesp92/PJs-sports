@@ -1,49 +1,10 @@
-import React, { useState, useEffect } from 'react'
-
+import useFetch from '../components/useFetch'
 
 function BasketBallLiveScores() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [basketballScores, setBasketBallScores] = useState([]);
-
-
   
-  useEffect(() => {
-    fetch(`https://www.thesportsdb.com/api/v2/json/${process.env.REACT_APP_API_KEY}/livescore.php?s=Basketball`)
-  
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status}: ${response.statusText}`);
-      } else {
-        return response.json()
-      }
-    })
+const {error , isLoaded, data: basketballScores} = useFetch(`https://www.thesportsdb.com/api/v2/json/${process.env.REACT_APP_API_KEY}/livescore.php?s=Basketball`)
 
-  .then((jsonifiedResponse) => {
-      setBasketBallScores(jsonifiedResponse.events)
-      setIsLoaded(true)
-      
-    })
-
-  .catch((error) => {
-    setError(error.message)
-    setIsLoaded(true)
-  });
-}, [])
-
-// jsonifiedResponse.leagues[0].teams[0].team.displayName
-
-
-
-console.log(basketballScores)
-
-let newArray = basketballScores.map( arrayItem => {
-  return 
-
-})
-  
-
-
+let newdata = basketballScores.events
 
 if (error) {
   return <h1>Error: {error}</h1>;
@@ -53,13 +14,12 @@ if (error) {
   return (
     <>
       
-        {basketballScores.map((basketball) =>
+      {newdata.map((basketball) =>
       <div>
         <div className='box'>
           <img src={`${basketball.strAwayTeamBadge}`}  width="100" height="100"/> 
           <img src={`${basketball.strHomeTeamBadge}`} width="100" height="100"/> 
           <h3><strong> {basketball.strAwayTeam} </strong> VS <strong>{basketball.strHomeTeam}</strong> </h3>
-
           <h3> {basketball.intAwayScore} | {basketball.intHomeScore}</h3>
           <h3> League: {basketball.strLeague}</h3>
           </div>

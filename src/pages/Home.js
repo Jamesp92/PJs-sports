@@ -1,23 +1,24 @@
-import MlbGames from "./MlbGames";
-import "./Home.css"
-import HockeyLiveScores from "./HockeyLiveScores";
-import BasketBallLiveScores from "./BasketballLiveScores";
-
-
-
 
 function Home() {
   return (
     <>
-      <div class="columns">
-        <div class="column"><HockeyLiveScores /></div>
-        <div class="column"><BasketBallLiveScores /></div>
-          <div class="column">
-            <p> <MlbGames /></p>
-          </div>
-        </div>    
+<div className="box is-transparent"   >
+  <p> <strong>Hello! welcome to my super cool Sports website! </strong></p>
+  <p> <strong>mvp</strong></p>
+
+<p>MAKE A RESPONSIVE WEBSITE DISPLAYS LIVE SPORTS DATA</p>
+
+
+  <p> <strong>stretch goals</strong></p>
+  <p>display betting odds</p>
+  <p>update scores every 2 minutes </p>
+  <p>user authentication</p>
+  <p>choose favorite team theme page around that team / prioritize those teams </p>
+  <p> message board for users to chat about teams</p>
+  <p>format for mobile</p>
+
+
+</div>
     </>
   )}
 export default Home;
-
-<marquee direction = "up"><MlbGames /></marquee>
